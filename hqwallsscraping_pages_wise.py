@@ -4,12 +4,16 @@ import bs4 as b
 import re
 import os
 
-num_of_pages = input('How many pages do you want to download')
-# createing the for loop for iterating the pages
+category_url = input("Enter the URL of the category: ")
+
+num_of_pages = input("How many pages do you want to download?")
+
+# Iterate through the specified number of pages
 for index in range(1, int(num_of_pages) + 1):
 
-    # taked url from hqwalls site using requests module
-    sampleurl = f'https://hdqwalls.com/category/cars-wallpapers/page/{index}'
+    # Create the URL for the current page
+    sampleurl = f"{category_url}/page/{index}"
+
     url = r.get(sampleurl)
     htmlcontent = url.text
 
